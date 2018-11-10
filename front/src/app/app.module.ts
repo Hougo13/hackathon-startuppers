@@ -1,26 +1,29 @@
-import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-
-import { MatMenuModule } from "@angular/material/menu";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatCardModule } from "@angular/material/card";
-import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
-import { AppRoutingModule } from "./app-routing.module";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { DataService } from "./data.service";
-import { AppComponent } from "./app.component";
-import { FeedbackComponent } from "./feedback/feedback.component";
+import { MatCardModule } from "@angular/material/card";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatMenuModule } from "@angular/material/menu";
 import { MatTableModule } from "@angular/material/table";
-import { ChartComponent } from "./chart/chart.component";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { ChartComponent } from "./chart/chart.component";
+import { DataService } from "./data.service";
+import { FeedbackComponent } from "./feedback/feedback.component";
+import { MyBusPageComponent } from "./my-bus-page/my-bus-page.component";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FeedbackComponent,
-    ChartComponent
+    ChartComponent,
+    MyBusPageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,9 @@ import { NgxChartsModule } from "@swimlane/ngx-charts";
     MatCardModule,
     MatToolbarModule,
     MatTableModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatGridListModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

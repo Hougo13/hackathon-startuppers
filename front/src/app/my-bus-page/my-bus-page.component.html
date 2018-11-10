@@ -1,0 +1,15 @@
+<div *ngIf="!(id$ | async)" cols="2" rowHeight="2:1">
+  <mat-card *ngFor="let uid of (uids$ | async)">
+    <img
+      mat-card-image
+      src="https://www.us-connection.com/pages/images-gal/school-bus-international-harvester-s-3800-dt-466e.jpg"
+      alt="Photo of a bus"
+    />
+    <mat-card-header>
+      <mat-card-title>Bus: {{ uid }} </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-button routerLink="{{uid}}" color="primary">MORE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

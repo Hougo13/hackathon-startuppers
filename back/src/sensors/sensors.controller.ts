@@ -14,6 +14,11 @@ export class SensorsController {
     return this.sensorsModel.find().exec();
   }
 
+  @Get('/uids')
+  async getUids() {
+    return await this.sensorsModel.distinct('uid').exec();
+  }
+
   @Get('/temperatures')
   async getTemperatures() {
     const result: any = {};
