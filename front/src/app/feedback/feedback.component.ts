@@ -45,7 +45,7 @@ export class FeedbackComponent implements OnInit, OnChanges {
   displayedColumns: string[] = [
     "uid",
     "createdAt",
-    // "hapiness",
+    "ratio",
     // "CO2",
     "temperature",
     "acceleration",
