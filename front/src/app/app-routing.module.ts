@@ -21,6 +21,11 @@ const routes: Routes = [
   {
     path: "my-bus",
     component: MyBusPageComponent
+  },
+  {
+    path: "",
+    redirectTo: "/my-bus",
+    pathMatch: "full"
   }
 ];
 

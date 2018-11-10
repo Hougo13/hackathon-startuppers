@@ -1,10 +1,10 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+import * as dayJs from 'dayjs';
 import { Model } from 'mongoose';
 import { Sensors } from './sensors.interface';
-import * as dayJs from 'dayjs';
 
-const groupByHour = list =>
+export const groupByHour = list =>
   list.reduce((r, item) => {
     const d = dayJs(item.createdAt);
     const hour = d.hour();

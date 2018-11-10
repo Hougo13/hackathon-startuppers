@@ -21,9 +21,9 @@ export class ChartComponent {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = "Country";
+  xAxisLabel = "Hour";
   showYAxisLabel = true;
-  yAxisLabel = "Population";
+  yAxisLabel = "C°";
 
   colorScheme = {
     domain: ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]

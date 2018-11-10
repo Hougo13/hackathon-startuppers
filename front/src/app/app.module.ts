@@ -18,6 +18,7 @@ import { DataService } from "./data.service";
 import { FeedbackComponent } from "./feedback/feedback.component";
 import { MyBusPageComponent } from "./my-bus-page/my-bus-page.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { DailyHappinessComponent } from './daily-happiness/daily-happiness.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavbarComponent } from "./navbar/navbar.component";
     FeedbackComponent,
     ChartComponent,
     MyBusPageComponent,
-    DataPageComponent
+    DataPageComponent,
+    DailyHappinessComponent
   ],
   imports: [
     BrowserModule,

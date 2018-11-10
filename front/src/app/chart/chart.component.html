@@ -1,14 +1,17 @@
-<ngx-charts-bar-vertical
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="data$ | async"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  (select)="onSelect($event)"
->
-</ngx-charts-bar-vertical>
+<mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile>
+    <ngx-charts-bar-vertical
+      [scheme]="colorScheme"
+      [results]="data$ | async"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-vertical
+  ></mat-grid-tile>
+  <mat-grid-tile><app-daily-happiness></app-daily-happiness></mat-grid-tile>
+</mat-grid-list>

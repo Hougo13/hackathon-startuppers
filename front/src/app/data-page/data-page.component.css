@@ -1,3 +1,4 @@
 div {
   padding: 30px;
+  overflow: auto;
 }
