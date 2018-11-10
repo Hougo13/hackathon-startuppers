@@ -19,7 +19,9 @@ export class DataPageComponent implements OnInit {
         ).pipe(
           map(([x, y]) => [...x, ...y]),
           map(x =>
-            x.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
+            x.sort(
+              (a, b) => <any>new Date(a.createdAt) - <any>new Date(b.createdAt)
+            )
           ),
           map(x => {
             let lastRatio, lastNonRatio;
