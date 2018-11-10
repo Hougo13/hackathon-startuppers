@@ -1,7 +1,6 @@
-<mat-toolbar>
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-        <a routerLink="/feedback"><button mat-menu-item>Feedback</button></a>
-        <a routerLink="/chart"><button mat-menu-item>Chart</button></a>
-    </mat-menu>
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/"><h2>Happy Bus</h2></a>
+  <a mat-button routerLink="/feedback">My bus</a>
+  <a mat-button routerLink="/chart">Dashboard</a>
+  <a mat-button routerLink="/chart">Data</a>
 </mat-toolbar>
