@@ -12,9 +12,16 @@ import { DataService } from "./data.service";
 import { AppComponent } from "./app.component";
 import { FeedbackComponent } from "./feedback/feedback.component";
 import { MatTableModule } from "@angular/material/table";
+import { ChartComponent } from "./chart/chart.component";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FeedbackComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    FeedbackComponent,
+    ChartComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,7 +30,8 @@ import { MatTableModule } from "@angular/material/table";
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
+    NgxChartsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -19,9 +19,13 @@
     <th mat-header-cell *matHeaderCellDef> Acceleration </th>
     <td mat-cell *matCellDef="let element"> {{element.acceleration}} </td>
   </ng-container>
-  <ng-container matColumnDef="decibel">
-    <th mat-header-cell *matHeaderCellDef> Decibel </th>
-    <td mat-cell *matCellDef="let element"> {{element.decibel}} </td>
+  <ng-container matColumnDef="noise">
+    <th mat-header-cell *matHeaderCellDef> Noise </th>
+    <td mat-cell *matCellDef="let element"> {{element.noise}} </td>
+  </ng-container>
+  <ng-container matColumnDef="humidity">
+    <th mat-header-cell *matHeaderCellDef> Humidity </th>
+    <td mat-cell *matCellDef="let element"> {{element.humidity}} </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

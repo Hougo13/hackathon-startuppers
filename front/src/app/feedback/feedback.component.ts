@@ -6,7 +6,8 @@ export interface PeriodicData {
   cO2: number;
   temperature: number;
   acceleration: number;
-  decibel: number;
+  noise: number;
+  humidity: number;
 }
 
 const ELEMENT_DATA: PeriodicData[] = [
@@ -16,7 +17,8 @@ const ELEMENT_DATA: PeriodicData[] = [
     cO2: 1.0079,
     temperature: 4,
     acceleration: 1,
-    decibel: 9
+    noise: 9,
+    humidity: 9
   }
 ];
 
@@ -27,7 +29,6 @@ const ELEMENT_DATA: PeriodicData[] = [
 })
 export class FeedbackComponent implements OnInit {
   constructor() {}
-
   ngOnInit() {}
   displayedColumns: string[] = [
     "cardId",
@@ -35,7 +36,8 @@ export class FeedbackComponent implements OnInit {
     "CO2",
     "temperature",
     "acceleration",
-    "decibel"
+    "noise",
+    "humidity"
   ];
   dataSource = ELEMENT_DATA;
 }
