@@ -4,6 +4,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatMenuModule } from "@angular/material/menu";
+import { MatSortModule } from "@angular/material/sort";
 import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from "@angular/platform-browser";
@@ -12,6 +13,7 @@ import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ChartComponent } from "./chart/chart.component";
+import { DataPageComponent } from "./data-page/data-page.component";
 import { DataService } from "./data.service";
 import { FeedbackComponent } from "./feedback/feedback.component";
 import { MyBusPageComponent } from "./my-bus-page/my-bus-page.component";
@@ -23,7 +25,8 @@ import { NavbarComponent } from "./navbar/navbar.component";
     NavbarComponent,
     FeedbackComponent,
     ChartComponent,
-    MyBusPageComponent
+    MyBusPageComponent,
+    DataPageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { NavbarComponent } from "./navbar/navbar.component";
     MatTableModule,
     NgxChartsModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSortModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

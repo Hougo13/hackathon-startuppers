@@ -1,4 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, ViewChild, OnChanges } from "@angular/core";
+import { MatSort } from "@angular/material/sort";
+import { MatTableDataSource } from "@angular/material/table";
 
 export interface PeriodicData {
   cardId: string;
@@ -27,17 +29,27 @@ const ELEMENT_DATA: PeriodicData[] = [
   templateUrl: "./feedback.component.html",
   styleUrls: ["./feedback.component.css"]
 })
-export class FeedbackComponent implements OnInit {
+export class FeedbackComponent implements OnInit, OnChanges {
+  @Input() data: any[];
+  @ViewChild(MatSort) sort: MatSort;
+  dataSource: MatTableDataSource<any[]>;
+
   constructor() {}
   ngOnInit() {}
+
+  ngOnChanges() {
+    this.dataSource = new MatTableDataSource(this.data ? this.data : []);
+    this.dataSource.sort = this.sort;
+  }
+
   displayedColumns: string[] = [
     "cardId",
-    "hapiness",
-    "CO2",
+    "createdAt",
+    // "hapiness",
+    // "CO2",
     "temperature",
     "acceleration",
     "noise",
     "humidity"
   ];
-  dataSource = ELEMENT_DATA;
 }

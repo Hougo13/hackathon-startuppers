@@ -3,11 +3,12 @@ import { Routes, RouterModule } from "@angular/router";
 import { FeedbackComponent } from "./feedback/feedback.component";
 import { ChartComponent } from "./chart/chart.component";
 import { MyBusPageComponent } from "./my-bus-page/my-bus-page.component";
+import { DataPageComponent } from "./data-page/data-page.component";
 
 const routes: Routes = [
   {
-    path: "feedback",
-    component: FeedbackComponent
+    path: "data",
+    component: DataPageComponent
   },
   {
     path: "chart",
