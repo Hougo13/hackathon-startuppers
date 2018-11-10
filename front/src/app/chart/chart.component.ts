@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { HttpClient } from "@angular/common/http";
+import { Component } from "@angular/core";
+import { Observable } from "rxjs";
 import { single } from "./data";
 
+import { map } from "rxjs/operators";
 @Component({
   selector: "app-chart",
   templateUrl: "./chart.component.html",
@@ -27,10 +28,22 @@ export class ChartComponent {
   colorScheme = {
     domain: ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
   };
+  data$: Observable<any[]>;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     Object.assign(this, { single });
+    this.data$ = http
+      .get<any>("http://localhost:3000/sensors/temperatures")
+      .pipe(
+        map(data => {
+          return Object.keys(data.items["005A694ed"]).map(key => ({
+            name: key,
+            value: data.items["005A694ed"][key]
+          }));
+        })
+      );
   }
+
   onSelect(event) {
     console.log(event);
   }

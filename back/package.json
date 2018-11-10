@@ -22,6 +22,7 @@
     "@nestjs/common": "^5.4.0",
     "@nestjs/core": "^5.4.0",
     "@nestjs/mongoose": "^5.2.2",
+    "dayjs": "^1.7.7",
     "mongoose": "^5.3.11",
     "mosca": "^2.8.3",
     "reflect-metadata": "^0.1.12",
