@@ -6,7 +6,7 @@
 #include <LPS22HBSensor.h> // Capteur Barométrique
 #include <LIS3MDLSensor.h> // Magnétomètre ( boussolle digitale )
 #include <LSM6DSLSensor.h> // 3D Gyroscope et Accelerométre)
-
+#define UID "005A694ed"
 #define I2C2_SCL PB10 // Port IC2 SCL utilisé sur la carte IOT Node
 #define I2C2_SDA PB11 // Port IC2 SDA utilisé sur la carte IOT Node
 #define SerialPort Serial
@@ -121,7 +121,7 @@ void reconnect()
     // Loop until we're reconnected
     while (!client.connected())
     {
-        Serial.print("Connecting to ThingsBoard node ...");
+        Serial.print("Connecting to Server ...");
         // Attempt to connect (clientId, username, password)
         if (client.connect("STMicro Discovery IOT Node", NULL, NULL))
         {
@@ -184,13 +184,16 @@ void getAndSendData()
 
     // Prepare a JSON payload string
     String payload = "{";
-    payload += "\"Temperature\":";
+    payload += "\"uid\":\"";
+    payload += UID;
+    payload += "\",";
+    payload += "\"temperature\":";
     payload += temperature;
     payload += ",";
-    payload += "\"Humidite\":";
+    payload += "\"humidity\":";
     payload += humidity;
     payload += ",";
-    payload += "\"Bruit\":";
+    payload += "\"noise\":";
     payload += noise;
     payload += ",";
     payload += "\"acceleration\":";

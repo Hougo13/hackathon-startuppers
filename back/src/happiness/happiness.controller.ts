@@ -10,12 +10,8 @@ export class HappinessController {
   ) {}
 
   @Post()
-  async postHappiness(
-    @Body('ratio') ratio: number,
-    @Body('datetime') dateTime: Date,
-  ) {
-    console.log(ratio, dateTime);
-    const happiness = new this.happinessModel({ ratio, dateTime });
+  async postHappiness(@Body('ratio') ratio: number) {
+    const happiness = new this.happinessModel({ ratio });
     return await happiness.save();
   }
 
